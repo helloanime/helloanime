@@ -93,7 +93,7 @@ function Animecards({ data, cardid, show=true }) {
                   status: item?.mediaRecommendation?.status || '',
                   format: item?.mediaRecommendation?.format || '',
                   episodes: item?.mediaRecommendation?.episodes || '',
-                  nextAiringEpisode: item?.mediaRecommendation?.nextAiringEpisode || ''
+                  nextHelloAnimegEpisode: item?.mediaRecommendation?.nextHelloAnimegEpisode || ''
                 };
                 return (
                   <Link href={`/anime/info/${anime.id}`} key={anime.id}>
@@ -111,7 +111,7 @@ function Animecards({ data, cardid, show=true }) {
                   status: item?.node?.status || '',
                   format: item?.node?.format || '',
                   episodes: item?.node?.episodes || '',
-                  nextAiringEpisode: item?.node?.nextAiringEpisode || '',
+                  nextHelloAnimegEpisode: item?.node?.nextHelloAnimegEpisode || '',
                   relationType : item?.relationType || ''
                 };
                 return (
@@ -129,7 +129,7 @@ function Animecards({ data, cardid, show=true }) {
                   status: item.status || '',
                   format: item.format || '',
                   episodes: item?.episodes || '',
-                  nextAiringEpisode: item?.nextAiringEpisode || '',
+                  nextHelloAnimegEpisode: item?.nextHelloAnimegEpisode || '',
                 };
                 return (
                   <Link href={`/anime/info/${anime.id}`} key={anime.id}>
