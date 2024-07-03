@@ -10,8 +10,8 @@ function Overview({data}) {
         setShowFullDescription(!showFullDescription);
     };
 
-    const getHelloAnimegTime = (HelloAnimegdate) => {
-        const timeDifference = HelloAnimegdate * 1000 - Date.now();
+    const getairingTime = (airingdate) => {
+        const timeDifference = airingdate * 1000 - Date.now();
         const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
         const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
@@ -19,7 +19,7 @@ function Overview({data}) {
         return `${days}d ${hours}h ${minutes}m`
     }
 
-    const getHelloAnimegTimeUnix = (seconds) => {
+    const getairingTimeUnix = (seconds) => {
         var date = new Date(seconds * 1000); // Convert seconds to milliseconds
         var options = { weekday: 'short', day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', timeZoneName: 'short' };
         var dateString = date.toLocaleString('en-US', options);
@@ -38,8 +38,8 @@ function Overview({data}) {
                 <div className={styles.detailscontent}>
                   {data?.status==='RELEASING' && 
                     <div className={styles.singlecontent}>
-                        <span className={`${styles.sideheading} font-semibold !text-[15px]`}>HelloAnimeg</span>
-                        <Tooltip content={getHelloAnimegTimeUnix(data?.nextHelloAnimegEpisode?.HelloAnimegAt)}
+                        <span className={`${styles.sideheading} font-semibold !text-[15px]`}>airing</span>
+                        <Tooltip content={getairingTimeUnix(data?.nextairingEpisode?.airingAt)}
                         // showArrow
                         size='sm'
                         classNames={{
@@ -52,14 +52,14 @@ function Overview({data}) {
                                 "text-black font-medium bg-gradient-to-br from-white to-neutral-400",
                             ],
                         }}>
-                            <span className={`${styles.con} !text-white cursor-pointer`} suppressHydrationWarning>EP {data?.nextHelloAnimegEpisode?.episode}: {getHelloAnimegTime(data?.nextHelloAnimegEpisode?.HelloAnimegAt)}</span>
+                            <span className={`${styles.con} !text-white cursor-pointer`} suppressHydrationWarning>EP {data?.nextairingEpisode?.episode}: {getairingTime(data?.nextairingEpisode?.airingAt)}</span>
                         </Tooltip>
                     </div>}
                     <div className={styles.singlecontent}>
                         <span className={styles.sideheading}>Type</span> <span className={styles.con}>{data?.format}</span>
                     </div>
                     <div className={styles.singlecontent}>
-                        <span className={styles.sideheading}>Episodes</span> <span className={styles.con}>{data?.episodes || data?.nextHelloAnimegEpisode?.episode - 1 || "?"}</span>
+                        <span className={styles.sideheading}>Episodes</span> <span className={styles.con}>{data?.episodes || data?.nextairingEpisode?.episode - 1 || "?"}</span>
                     </div>
                     <div className={styles.singlecontent}>
                         <span className={styles.sideheading}>Genres</span> <span className={styles.con}>{data?.genres.join(", ")}</span>

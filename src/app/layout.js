@@ -16,9 +16,9 @@ import { AuthProvider } from './SessionProvider';
 const inter = Inter({ subsets: ['latin'] })
 //const myfont = localFont({ src: "../static-fonts/AldotheApache.ttf" })
 
-const APP_NAME = "HelloAnime";
-const APP_DEFAULT_TITLE = "HelloAnime - Watch Anime Online";
-const APP_DESCRIPTION = "Discover a world of anime without interruptions on HelloAnime! Watch your favorite series for free, with no ads to disrupt your viewing experience. Join now and immerse yourself in the captivating stories and vibrant characters that HelloAnime has to offer!";
+const APP_NAME = "airin";
+const APP_DEFAULT_TITLE = "airin - Watch Anime Online";
+const APP_DESCRIPTION = "Discover a world of anime without interruptions on airin! Watch your favorite series for free, with no ads to disrupt your viewing experience. Join now and immerse yourself in the captivating stories and vibrant characters that airin has to offer!";
 
 export const metadata = {
   metadataBase: new URL('https://aniplaynow.live'),
@@ -48,8 +48,8 @@ export const metadata = {
     'latest dubbed anime',
     'subbed anime streaming',
     'dubbed anime streaming',
-    'HelloAnime latest anime'
-    'HelloAnime',
+    'airin latest anime'
+    'airin',
   ],
   manifest: "/manifest.json",
   appleWebApp: {

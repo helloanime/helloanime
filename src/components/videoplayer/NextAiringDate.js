@@ -1,16 +1,16 @@
 "use client"
 import React, { useEffect, useState } from 'react';
 
-function NextHelloAnimegDate({ nextHelloAnimegEpisode }) {
+function NextairingDate({ nextairingEpisode }) {
   const [timeLeft, setTimeLeft] = useState(null);
 
   useEffect(() => {
-    if (!nextHelloAnimegEpisode) {
+    if (!nextairingEpisode) {
       return;
     }
 
     const intervalId = setInterval(() => {
-      const timeDifference = nextHelloAnimegEpisode.HelloAnimegAt * 1000 - Date.now();
+      const timeDifference = nextairingEpisode.airingAt * 1000 - Date.now();
 
       if (timeDifference <= 0) {
         clearInterval(intervalId);
@@ -26,12 +26,12 @@ function NextHelloAnimegDate({ nextHelloAnimegEpisode }) {
     }, 1000);
 
     return () => clearInterval(intervalId);
-  }, [nextHelloAnimegEpisode]);
+  }, [nextairingEpisode]);
 
-  if (!nextHelloAnimegEpisode || timeLeft === null) {
+  if (!nextairingEpisode || timeLeft === null) {
     return (
     <div className='hidden w-[98%] mx-auto lg:w-full md:flex xl:max-w-[96.5%] my-5 text-[13px] bg-[#18181B] py-2 rounded-[8px] text-center text-[#ffffffb2]  flex-row gap-1 items-center justify-center'>
-       The next episode will be HelloAnimeg Shortly... 
+       The next episode will be airing Shortly... 
     </div>
     )}
 
@@ -47,4 +47,4 @@ function NextHelloAnimegDate({ nextHelloAnimegEpisode }) {
   );
 }
 
-export default NextHelloAnimegDate;
+export default NextairingDate;
